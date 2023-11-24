@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "zhelpers.h": "c",
+        "zmq.h": "c"
+    }
+}
