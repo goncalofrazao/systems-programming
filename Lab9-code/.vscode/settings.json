@@ -1,0 +1,6 @@
+{
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "balls.pb-c.h": "c"
+    }
+}
