@@ -1,13 +1,15 @@
 #include <stdio.h>
-#include <pthread.h>  
-#include <unistd.h> 
+#include <pthread.h>
+#include <unistd.h>
 #include <stdlib.h>
-int n = 0;
 
-void * thread_function(void * arg){
-    long int r = random()%100;
+void *thread_function(void *arg)
+{
+    int n = 0;
+    long int r = random() % 100;
     printf("Start Thread %lu\n", r);
-    while(n <10){
+    while (n < 10)
+    {
         sleep(1);
         n++;
         printf("inside Thread %lu %d\n", r, n);
@@ -16,7 +18,8 @@ void * thread_function(void * arg){
     return (void *)r;
 }
 
-int main(){
+int main()
+{
     char line[100];
     int n_threads;
     printf("How many threads: ");
@@ -25,8 +28,9 @@ int main(){
     pthread_t thread_id;
 
     int i = 0;
-    while( i < n_threads) {
-        pthread_create(&thread_id, NULL,thread_function, NULL);
+    while (i < n_threads)
+    {
+        pthread_create(&thread_id, NULL, thread_function, NULL);
         i++;
     };
     printf("Carregue em enter para terminar\n");
